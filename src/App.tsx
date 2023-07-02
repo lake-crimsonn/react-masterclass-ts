@@ -1,19 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-
-const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.backgroundColor};
-`;
-
-const Title = styled.h1`
-  color: ${(props) => props.theme.textColor};
-`;
+import Circle from "./Circle";
 
 function App() {
   return (
-    <Wrapper>
-      <Title>Hello</Title>
-    </Wrapper>
+    <div>
+      <Circle bgColor="teal" />
+      <Circle bgColor="tomato" borderColor="black" />
+    </div>
   );
 }
 

@@ -1,24 +1,30 @@
 import styled from "styled-components";
 
 interface ContainerProps {
-  bgColor: string;
-  borderColor: string;
+  bgcolor: string;
+  bordercolor: string;
 }
 
 const Container = styled.div<ContainerProps>`
   width: 200px;
   height: 200px;
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.bgcolor};
   border-radius: 100px;
-  border-color: ${(props) => props.borderColor};
+  border: 2px solid ${(props) => props.bordercolor};
 `;
 
 interface CircleProps {
-  bgColor: string;
-  borderColor?: string;
+  bgcolor: string;
+  bordercolor?: string;
+  text?: string;
 }
-function Circle({ bgColor, borderColor }: CircleProps) {
-  return <Container bgColor={bgColor} borderColor={borderColor ?? bgColor} />;
+function Circle({ bgcolor, bordercolor, text = "default text" }: CircleProps) {
+  //   const [value, useValue] = useState<number | string>("");
+  return (
+    <Container bgcolor={bgcolor} bordercolor={bordercolor ?? bgcolor}>
+      {text}
+    </Container>
+  );
 }
 
 export default Circle;
